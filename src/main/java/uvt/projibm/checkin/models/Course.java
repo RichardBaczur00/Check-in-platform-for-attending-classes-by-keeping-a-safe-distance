@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 @Entity
-public class Clasa {
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
