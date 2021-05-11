@@ -10,9 +10,4 @@ public class CheckinApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CheckinApplication.class, args);
 	}
-
-	@GetMapping("/index")
-	public String index() {
-		return "Hello World";
-	}
 }

@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import uvt.projibm.checkin.exceptions.UserNotAGuestException;
 import uvt.projibm.checkin.exceptions.UserNotAStudentException;
 import uvt.projibm.checkin.exceptions.UserNotFoundException;
-import uvt.projibm.checkin.models.StudentFilter;
+import uvt.projibm.checkin.models.Filter;
 import uvt.projibm.checkin.models.User;
 import uvt.projibm.checkin.repositories.UserRepository;
 
@@ -20,13 +20,15 @@ public class UserController {
         this.repo = repo;
     }
 
-    @GetMapping("/users")
+    //TODO: Change endpoint mapping to user
+
+    @GetMapping("/user/all")
     private List<User> getAllUsers() {
-        List<User> tmp = new ArrayList<>();
+        List<User> users = new ArrayList<>();
 
-        repo.findAll().forEach(tmp::add);
+        repo.findAll().forEach(users::add);
 
-        return tmp;
+        return users;
     }
 
     @PostMapping("/users")
@@ -45,7 +47,7 @@ public class UserController {
     }
 
     @GetMapping("/students")
-    private List<User> getStudents(@RequestBody StudentFilter filter) {
+    private List<User> getStudents(@RequestBody Filter filter) {
         List<User> tmp = new ArrayList<>();
 
         repo.findAll().forEach(user -> {

@@ -1,10 +1,10 @@
 package uvt.projibm.checkin.models;
 
-public class StudentFilter {
+public class Filter {
     private String field;
     private String data;
 
-    public StudentFilter(String field, String data) {
+    public Filter(String field, String data) {
         this.field = field;
         this.data = data;
     }
