@@ -1,0 +1,52 @@
+<div class="card text-center">
+  <div class="card-header">
+    <h5>Add Course</h5>
+  </div>
+  <div class="card-body">
+    <div class="centered" style="margin-bottom:15px; max-width: 75%;">
+      <form id="postForm" style="margin-top: 15px" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name <span class="require">*</span></label>
+          <input #name id="name" type="text" class="form-control" formcontrolName="name" name="name" required
+            minlength="2" />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year <span class="require">*</span></label>
+          <input #year id="year" type="number" class="form-control" name="year" formcontrolName="year"
+            required min="1" max="9"/>
+        </div>
+
+        <div class="form-group">
+          <label for="section">Section <span class="require">*</span></label>
+          <input #section id="section" type="text" class="form-control" name="section"
+            formcontrolName="section" minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="section">Teacher <span class="require">*</span></label>
+          <select #teacher id="teacher" name="teacher" class="form-control" formcontrolName="teacher">
+            <option *ngFor="let teacher of teachersList" value="{{teacher.id}}">{{teacher.firstName}} {{teacher.lastName}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="section">Classroom <span class="require">*</span></label>
+          <select #teacher id="classroom" name="classroom" class="form-control" formcontrolName="classroom">
+            <option *ngFor="let classroom of classroomList" value="{{classroom.id}}">{{classroom.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p><span class="require">*</span> - required fields</p>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-primary my-2 my-sm-0">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

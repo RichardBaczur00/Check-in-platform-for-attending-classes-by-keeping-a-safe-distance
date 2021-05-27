@@ -1,0 +1,64 @@
+<div class="card text-center">
+  <div class="card-header">
+    <h5>Add User</h5>
+  </div>
+  <div class="card-body">
+    <div class="centered" style="margin-bottom:15px; max-width: 75%;">
+      <form id="postForm" style="margin-top: 15px" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstname">Last Name <span class="require">*</span></label>
+          <input #firstname id="firstname" type="text" class="form-control" formcontrolName="firstname" name="firstname" required
+            minlength="2" />
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Last Name <span class="require">*</span></label>
+          <input #lastname id="lastname" type="text" class="form-control" formcontrolName="lastname" name="lastname" required
+            minlength="2" />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year <span class="require">*</span></label>
+          <input #year id="year" type="number" class="form-control" name="year" formcontrolName="year"
+            required min="1" max="9"/>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department <span class="require">*</span></label>
+          <input #department id="department" type="text" class="form-control" name="department"
+            formcontrolName="department" minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="section">Section <span class="require">*</span></label>
+          <input #section id="section" type="text" class="form-control" name="section"
+            formcontrolName="section" minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="groupname">Group Name <span class="require">*</span></label>
+          <input #section id="groupname" type="text" class="form-control" name="groupname"
+            formcontrolName="groupname" minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role <span class="require">*</span></label>
+          <select #role id="role" name="role" class="form-control" formcontrolName="role">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p><span class="require">*</span> - required fields</p>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-primary my-2 my-sm-0">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
