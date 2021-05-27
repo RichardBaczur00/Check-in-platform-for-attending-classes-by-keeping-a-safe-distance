@@ -2,6 +2,7 @@ package uvt.projibm.checkin.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Course {
@@ -25,7 +26,7 @@ public class Course {
             joinColumns = @JoinColumn(name="Course_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="Student_id", referencedColumnName="id")
     )
-    private HashSet<User> Students;
+    private Set<User> Students;
 
     @ManyToOne
     @JoinColumn(name="CLASSROOM_ID", referencedColumnName = "id")
@@ -71,11 +72,11 @@ public class Course {
         Section = section;
     }
 
-    public HashSet<User> getStudents() {
+    public Set<User> getStudents() {
         return Students;
     }
 
-    public void setStudents(HashSet<User> students) {
+    public void setStudents(Set<User> students) {
         Students = students;
     }
 

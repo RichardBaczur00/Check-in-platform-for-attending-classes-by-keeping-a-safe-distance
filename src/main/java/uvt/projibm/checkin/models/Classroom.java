@@ -17,7 +17,7 @@ public class Classroom {
 
     private Integer Capacity;
 
-    private Long Features;
+    private String Features;
 
     public Integer getId() {
         return id;
@@ -51,11 +51,11 @@ public class Classroom {
         Capacity = capacity;
     }
 
-    public Long getFeatures() {
+    public String getFeatures() {
         return Features;
     }
 
-    public void setFeatures(Long features) {
+    public void setFeatures(String features) {
         Features = features;
     }
 }

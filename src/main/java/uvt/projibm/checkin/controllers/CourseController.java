@@ -13,6 +13,7 @@ import uvt.projibm.checkin.repositories.UserRepository;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class CourseController {
@@ -74,7 +75,7 @@ public class CourseController {
         User newStudent = userRepository.findById(enrollment.getUserId()).orElseThrow(() ->
                 new UserNotFoundException(enrollment.getUserId()));
 
-        HashSet<User> oldStudentList = joinedCourse.getStudents();
+        Set<User> oldStudentList = joinedCourse.getStudents();
         oldStudentList.add(newStudent);
         joinedCourse.setStudents(oldStudentList);
     }
@@ -86,7 +87,7 @@ public class CourseController {
         User newStudent = userRepository.findById(enrollment.getUserId()).orElseThrow(() ->
                 new UserNotFoundException(enrollment.getUserId()));
 
-        HashSet<User> oldStudentList = joinedCourse.getStudents();
+        Set<User> oldStudentList = joinedCourse.getStudents();
         oldStudentList.remove(newStudent);
         joinedCourse.setStudents(oldStudentList);
     }
